@@ -18,7 +18,7 @@ echo
 
 PORT=$1
 
-if [[ $PORT -eq "" ]]; then
+if [[ -z "$PORT" ]]; then
     # choose the first connected ttyUSB* device
     PORT=`ls /dev/ttyUSB* | awk {'print $1'}`;
     echo "Using $PORT as default port."
